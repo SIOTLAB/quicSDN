@@ -1,0 +1,97 @@
+
+
+     CUnit - A unit testing framework for C - Version 2.1-3
+     http://cunit.sourceforge.net/
+
+
+Suite: libngtcp2_TestSuite
+  Test: pkt_decode_hd_long ...passed
+  Test: pkt_decode_hd_short ...passed
+  Test: pkt_decode_stream_frame ...passed
+  Test: pkt_decode_ack_frame ...passed
+  Test: pkt_decode_padding_frame ...passed
+  Test: pkt_encode_stream_frame ...passed
+  Test: pkt_encode_ack_frame ...passed
+  Test: pkt_encode_rst_stream_frame ...passed
+  Test: pkt_encode_connection_close_frame ...passed
+  Test: pkt_encode_application_close_frame ...passed
+  Test: pkt_encode_max_data_frame ...passed
+  Test: pkt_encode_max_stream_data_frame ...passed
+  Test: pkt_encode_max_stream_id_frame ...passed
+  Test: pkt_encode_ping_frame ...passed
+  Test: pkt_encode_blocked_frame ...passed
+  Test: pkt_encode_stream_blocked_frame ...passed
+  Test: pkt_encode_stream_id_blocked_frame ...passed
+  Test: pkt_encode_new_connection_id_frame ...passed
+  Test: pkt_encode_stop_sending_frame ...passed
+  Test: pkt_encode_path_challenge_frame ...passed
+  Test: pkt_encode_path_response_frame ...passed
+  Test: pkt_encode_crypto_frame ...passed
+  Test: pkt_adjust_pkt_num ...passed
+  Test: pkt_validate_ack ...passed
+  Test: pkt_write_stateless_reset ...passed
+  Test: pkt_write_version_negotiation ...passed
+  Test: get_varint ...passed
+  Test: get_varint_len ...passed
+  Test: put_varint_len ...passed
+  Test: nth_server_bidi_id ...passed
+  Test: nth_server_uni_id ...passed
+  Test: nth_client_bidi_id ...passed
+  Test: nth_client_uni_id ...passed
+  Test: range_intersect ...passed
+  Test: range_cut ...passed
+  Test: range_not_after ...passed
+  Test: psl_insert ...passed
+  Test: ksl_insert ...passed
+  Test: rob_push ...passed
+  Test: rob_push_random ...passed
+  Test: rob_data_at ...passed
+  Test: rob_remove_prefix ...passed
+  Test: acktr_add ...passed
+  Test: acktr_eviction ...passed
+  Test: acktr_forget ...passed
+  Test: acktr_recv_ack ...passed
+  Test: encode_transport_params ...passed
+  Test: rtb_add ...passed
+  Test: rtb_recv_ack ...passed
+  Test: rtb_insert_range ...passed
+  Test: idtr_open ...passed
+  Test: ringbuf_push_front ...passed
+  Test: ringbuf_pop_front ...passed
+  Test: conn_stream_open_close ... next local stream id uni 7 and max local stream id 3
+passed
+  Test: conn_stream_rx_flow_control ...passed
+  Test: conn_stream_rx_flow_control_error ...passed
+  Test: conn_stream_tx_flow_control ...passed
+  Test: conn_rx_flow_control ...passed
+  Test: conn_rx_flow_control_error ...passed
+  Test: conn_tx_flow_control ...passed
+  Test: conn_shutdown_stream_write ...passed
+  Test: conn_recv_rst_stream ...passed
+  Test: conn_recv_stop_sending ...passed
+  Test: conn_recv_conn_id_omitted ...passed
+  Test: conn_short_pkt_type ...passed
+  Test: conn_recv_stateless_reset ...passed
+  Test: conn_recv_server_stateless_retry ...passed
+  Test: conn_recv_delayed_handshake_pkt ...passed
+  Test: conn_recv_max_stream_id ...passed
+  Test: conn_handshake ...passed
+  Test: conn_handshake_error ...passed
+  Test: conn_client_handshake ...passed
+  Test: conn_retransmit_protected ...passed
+  Test: conn_send_max_stream_data ...passed
+  Test: conn_recv_stream_data ...passed
+  Test: conn_recv_ping ...passed
+  Test: conn_recv_max_stream_data ...passed
+  Test: conn_send_early_data ...passed
+  Test: conn_recv_early_data ...passed
+  Test: conn_recv_compound_pkt ...passed
+  Test: conn_pkt_payloadlen ...passed
+
+Run Summary:    Type  Total    Ran Passed Failed Inactive
+              suites      1      1    n/a      0        0
+               tests     81     81     81      0        0
+             asserts   4754   4754   4754      0      n/a
+
+Elapsed time =    0.002 seconds
+PASS main (exit status: 0)
