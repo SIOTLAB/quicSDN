@@ -2,11 +2,13 @@
 Introduction:
   quicSDN is an architecture developed here in SIOTLAB Santa Clara University. Primary author for this file is Puneet Kumar, PhD student at Santa Clara University,
   under Professor Behnam Dezfouli. quicSDN is an attempt to run SDN components on QUIC protocol. These components are composed of the following:
-    1) RYU: A SDN controller, modified to be based on UDP protocol. Which can communicate QUIC Server. As soon ryu fires up, it opens 6653 and 6640 ports and start listening on these ports for localhost
-    2) Eventlet : A packet processing libary modified to fill the needs of RYU.
-    3) OpenSSL : SSL library, unchanged, standard to assist QUIC Code.
-    4) OVS: A SDN switch, based on UDP, which can communicate to QUIC Client. SDN Connections starts sending OpenFlow or OVSDB packets on port 6653 and 6640 locally on UDP.
-    4) quic-code: QUIC code, based on ngtcp2 implementation. Heavily tailored to fit the need to a QUIC bridge between RYU and OVS.
+    1) 	RYU: A SDN controller, modified to be based on UDP protocol. Which can communicate QUIC Server. 
+    	As soon ryu fires up, it opens 6653 and 6640 ports and start listening on these ports for localhost
+    2) 	Eventlet : A packet processing libary modified to fill the needs of RYU.
+    3) 	OpenSSL : SSL library, unchanged, standard to assist QUIC Code.
+    4) 	OVS: A SDN switch, based on UDP, which can communicate to QUIC Client. SDN Connections starts sending OpenFlow or 
+    	OVSDB packets on port 6653 and 6640 locally on UDP.
+    4) 	quic-code: QUIC code, based on ngtcp2 implementation. Heavily tailored to fit the need to a QUIC bridge between RYU and OVS.
     
     
  Usage:
