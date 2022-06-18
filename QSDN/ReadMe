@@ -1,7 +1,8 @@
 
 Introduction:
-  quicSDN is an architecture developed here in SIOTLAB Santa Clara University. Primary author for this file is Puneet Kumar, PhD student at Santa Clara University,
-  under Professor Behnam Dezfouli. quicSDN is an attempt to run SDN components on QUIC protocol. These components are composed of the following:
+  quicSDN is an architecture developed here in SIOTLAB Santa Clara University. 
+  Primary author for this file is Puneet Kumar, PhD student at Santa Clara University, under Professor Behnam Dezfouli. quicSDN is an attempt to run SDN components on QUIC protocol. 
+  These components are composed of the following:
     1) 	RYU: A SDN controller, modified to be based on UDP protocol. Which can communicate QUIC Server. 
     	As soon ryu fires up, it opens 6653 and 6640 ports and start listening on these ports for localhost
     2) 	Eventlet : A packet processing libary modified to fill the needs of RYU.
