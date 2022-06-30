@@ -1,0 +1,54 @@
+/* This is an ongoing research work, any copy or usage of this material before paper publish is a violation */
+
+
+Introduction:
+  quicSDN is an architecture developed here in SIOTLAB Santa Clara University. 
+  Primary author for this file is Puneet Kumar, PhD student at Santa Clara University, under Professor Behnam Dezfouli. quicSDN is an attempt to run SDN components on QUIC protocol. 
+  These components are composed of the following:
+    1) 	RYU: A SDN controller, modified to be based on UDP protocol. Which can communicate QUIC Server. 
+    	As soon ryu fires up, it opens 6653 and 6640 ports and start listening on these ports for localhost
+    2) 	Eventlet : A packet processing libary modified to fill the needs of RYU.
+    3) 	OpenSSL : SSL library, unchanged, standard to assist QUIC Code.
+    4) 	OVS: A SDN switch, based on UDP, which can communicate to QUIC Client. SDN Connections starts sending OpenFlow or 
+    	OVSDB packets on port 6653 and 6640 locally on UDP.
+    4) 	quic-code: QUIC code, based on ngtcp2 implementation. Heavily tailored to fit the need to a QUIC bridge between RYU and OVS.
+    
+    
+ Usage:
+ 	This feature is purely experimental based and would require some work if it has to be scaled. 
+	Please use the OVS in this git repo as normal OVS wouldn't support UDP and hence would not work.
+	RYU is based on existing RYU/TCP and in addition to changing the transportation, this feature is heavily modified for greenio sockets and event handlers.
+	RYU: It will start a UDP server on 6653 port for ryu as controller
+	OVS: OVS will start as usual however, please use "ovs-vsctl set-controller udp::6653" in order to talk to RYU
+	
+	
+Installation:
+	sudo apt update
+	sudo apt install python3-pip
+	sudo apt install python-pip
+	sudo apt-get install build-essential checkinstall
+	sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+	cd /usr/src
+	sudo wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
+	sudo tar xzf Python-3.4.4.tgz
+	cd Python-3.4.4
+	sudo ./configure
+	make
+	sudo make install
+	sudo apt-get install dh-autoreconf
+	sudo apt-get install libev-dev
+	
+	The following packages are required to configure the build system:
+		pkg-config >= 0.20 autoconf automake autotools-dev libtool libngtcp2 uses cunit for its unit test frame work:
+		cunit >= 2.1 To build sources under the examples directory, libev is required:
+		libev The client and server under examples directory require OpenSSL (master branch) as crypto backend:
+
+	next steps are same for client and server. Go to each folder and run the following
+		cd openssl
+		./config enable-tls1_3 --prefix=$PWD/build
+		make -j$(nproc)
+		make install_sw
+		cd client or server whichever folder you are in
+		autoreconf -i
+		./configure PKG_CONFIG_PATH=$PWD/../openssl/build/lib/pkgconfig LDFLAGS="-Wl,-rpath,$PWD/../openssl/build/lib"
+		make -j$(nproc) check
